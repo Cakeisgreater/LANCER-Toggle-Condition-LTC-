@@ -20,3 +20,6 @@ Contains two compendiums - "LTC - Condition Macros" and "LTC World SCripts". The
 - The Worldscripts can be edited to your own preference. They look terrible and amateurish because I am not a programmer. The code was frankensteined together with help from Valk, Eranziel, CSMcFarland, and others on the PILOT NET discord. 
 
 ## Thanks to PILOT NET and Foundry Discord for help with everything.
+
+# manifest:
+https://github.com/Cakeisgreater/LANCER-Toggle-Condition-LTC-/releases/download/Latest/module.json
