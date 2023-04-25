@@ -14,6 +14,11 @@ A module for Foundry. Contains macros for LANCER.
 ## Installation (if you can call it that)
 Contains two compendiums - "LTC - Condition Macros" and "LTC World SCripts". The former should be imported, and the latter should be added using World Scripter or setup as a world script (check foundry wiki for more!).
 
+## recommended companion modules to improve your experience
+- [Lancer Conditionss](https://github.com/Eranziel/lancer-conditions)
+- [Quick Status select](https://foundryvtt.com/packages/quick-status-select)
+- [Monk's little details](https://foundryvtt.com/packages/monks-little-details)
+- [Dfreds Efects Panel](https://github.com/DFreds/dfreds-effects-panel)
 ## Things to keep in mind
 - ~~The condition toggles can only be used by the GM~~. Should work for both player and GM.Thanks to Zhell on the Foundry Discord.
   - Also this doesn't require Combat Utility Belt (CUB)! In my personal experience, CUB has tendency to bug out in LANCER 1.5.3 and presents certain compatibility issues. 
@@ -23,3 +28,6 @@ Contains two compendiums - "LTC - Condition Macros" and "LTC World SCripts". The
 
 # manifest:
 https://github.com/Cakeisgreater/LANCER-Toggle-Condition-LTC-/releases/download/Latest/module.json
+
+### check out my other stuff!
+https://github.com/Cakeisgreater/Lancer-Token-Wildcard
