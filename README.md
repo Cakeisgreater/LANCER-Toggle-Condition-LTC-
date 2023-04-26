@@ -21,7 +21,7 @@ Contains two compendiums - "LTC - Condition Macros" and "LTC World Scripts". The
 - [Quick Status select](https://foundryvtt.com/packages/quick-status-select)
 - [Monk's little details](https://foundryvtt.com/packages/monks-little-details)
 - [Dfreds Efects Panel](https://github.com/DFreds/dfreds-effects-panel)
-
+- [Status Icon Counters](https://foundryvtt.com/packages/statuscounter)
 
 ## Things to keep in mind
 - ~~The condition toggles can only be used by the GM~~. Should work for both player and GM.Thanks to Zhell on the Foundry Discord.
