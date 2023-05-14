@@ -24,7 +24,7 @@ Contains two compendiums - "LTC - Condition Macros" and "LTC World Scripts". The
 - [Status Icon Counters](https://foundryvtt.com/packages/statuscounter)
 
 ## Things to keep in mind
-- ~~The condition toggles can only be used by the GM~~. Should work for both player and GM.Thanks to Zhell on the Foundry Discord.
+- ~~The condition toggles can only be used by the GM~~. Should work for both player and GM.Thanks to Zhell on the Foundry Discord. **NOTE**: Cannot be used from player-side to toggle "Lockon" (or any other condition for that matter) on actors they DO NOT own (i.e. NPCs, etc.). **This is a (mostly) GM-side tool**.
   - Also this doesn't require Combat Utility Belt (CUB)! In my personal experience, CUB has tendency to bug out in LANCER 1.5.3 and presents certain compatibility issues. 
 - The Worldscripts can be edited to your own preference. They look terrible and amateurish because I am not a programmer. The code was frankensteined together with help from Valk, Eranziel, CSMcFarland, and others on the PILOT NET discord.
 - you can always add your own conditions by adding blocks to the "homebrew conditions" world script
