@@ -33,6 +33,144 @@ Contains two compendiums - "LTC - Condition Macros" and "LTC World Scripts". The
 
 ## Thanks to PILOT NET and Foundry Discord for help with everything.
 
+## Scripts Included
+### Homebrew Conditions
+```console.log("Adding custom status effects")
+let conds = [
+{
+    id: "dispersal-shield",
+    label: "Dispersal Shield",
+    icon: "Icons/Dispersal-Shield.png",
+},
+{
+    id: "eye-of-midnight", 
+	label: "Eye of Midnight", 
+	icon: "Icons/Eye-of-midnight.png",
+},
+{
+    id: "bodyguard", 
+	label: "Bodyguard", 
+	icon: "Icons/Bodyguard.png",
+},
+{
+	id: "leadership", 
+	label: "Leadership Die", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/dice-d6-white.png",
+},
+{
+	id: "lh-javelins", 
+	label: "Lock/Hold Javelins", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/LockHold-Javelins.png",
+},
+{
+	id: "retribution", 
+	label: "Retribution", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/Retribution.png",
+},
+{
+	id: "explosive-knives", 
+	label: "Explosive Knives", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/Explosive-Knives.png",
+},
+{
+	id: "pin", 
+	label: "Pin", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/pin.png",
+},
+{
+	id: "coreworm-rockets", 
+	label: "Coreworm Rockets", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/core-worm-rockets.png",
+},
+{
+	id: "erupting-shrapnel", 
+	label: "Erupting Shrapnel", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/erupting shrapnel.png",
+},
+{
+	id: "tracker", 
+	label: "Tracker", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/Tracker.png",
+},
+{
+	id: "orange", 
+	label: "Orange", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/orange.png",
+},
+{
+	id: "apple", 
+	label: "Apple", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/apple.png",
+},
+{
+	id: "blueberry", 
+	label: "Blueberry", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/blueberry.png",
+},
+{
+	id: "lemon", 
+	label: "Lemon", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/lemon.png",
+},
+{
+	id: "lime", 
+	label: "Lime", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/lime.png",
+},
+{
+	id: "plum", 
+	label: "Plum", 
+	icon: "modules/lancer-toggle-conditions-ltc/Icons/plum.png",
+}
+];
+CONFIG.statusEffects = CONFIG.statusEffects.concat(conds);
+```
+### Sample Toggle Condition
+```const id = "your-condition-here";
+const eff = CONFIG.statusEffects.find(e => e.id === id);
+await token.toggleEffect(eff);
+```
+### Resizer (v3)
+```
+console.log("Creating Token Augment Hook");
+Hooks.on("preCreateToken", (token, data, options, userId) => {
+
+	let Token_Size = token.actor.system.derived.mm.Size;
+	let texture = foundry.utils.duplicate(token.texture);
+	let flags = foundry.utils.duplicate(token.flags);
+	if (Token_Size <= 1 && !token.actor.flags["lancer-clocks"] && token.actor.type !== 'deployable') {
+        console.log(`Scaling up Size 1 token and offsetting for ${token.name}`);
+        texture.scaleX = 1.5;
+        texture.scaleY = 1.5;
+        flags["hex-size-support"].pivotx = 0;
+        flags["hex-size-support"].pivoty = 50;
+        token.updateSource({"texture": texture, "flags": flags});
+}
+	else if (Token_Size === 2 && !token.actor.flags["lancer-clocks"] && token.actor.type !== 'deployable') {
+	console.log(`Scaling up Size 2`);
+        texture.scaleX = 1.3;
+        texture.scaleY = 1.3;
+        flags["hex-size-support"].pivotx = 0;
+        flags["hex-size-support"].pivoty = 40;
+        token.updateSource({"texture": texture, "flags": flags});
+	}
+	else if (Token_Size === 3 && !token.actor.flags["lancer-clocks"] && token.actor.type !== 'deployable') {
+	console.log(`Scaling up Size 3`);
+        texture.scaleX = 1.0;
+        texture.scaleY = 1.0;
+        flags["hex-size-support"].pivotx = 0;
+        flags["hex-size-support"].pivoty = 40;
+        token.updateSource({"texture": texture, "flags": flags});
+	}
+	});
+  ```
+### Scene Worldscript
+```
+console.log("Setting hex grids and turning off token vision...");
+Hooks.on("preCreateScene", (scene) => {
+	scene.updateSource({tokenVision: false, "grid.type": CONST.GRID_TYPES.HEXODDR});
+});
+```
 # manifest:
 https://github.com/Cakeisgreater/LANCER-Toggle-Condition-LTC-/releases/download/Latest/module.json
 
