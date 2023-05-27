@@ -5,7 +5,7 @@ A module for Foundry. Contains macros for LANCER.
 ## A macro compendium containing two things: 
 1) Toggles for *most* of LANCER CRB's conditions and statuses (i.e. prone, stunned, invisible, etc.)
 2) A series of Worldscripts. These set defaults for certain settings. Currently contains:
-  - Token image resizer ("Resizer_new")
+  - Token image resizer (~~"Resizer_new"~~ "Resizer v3")
   - Default Hex grid and token vision off for new scenes ("Scene Worldscript")
   - New conditions ("homebrew conditions") to indicate some NPC abilities. Also contains some homemade condition icons! You can easily add your own conditions. 
 
