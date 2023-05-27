@@ -35,6 +35,7 @@ Contains two compendiums - "LTC - Condition Macros" and "LTC World Scripts". The
 
 ## Scripts Included
 ### Homebrew Conditions
+Thanks to Eranziel on PILOT NET
 ```console.log("Adding custom status effects")
 let conds = [
 {
