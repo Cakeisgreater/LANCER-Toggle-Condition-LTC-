@@ -171,6 +171,29 @@ Hooks.on("preCreateScene", (scene) => {
 	scene.updateSource({tokenVision: false, "grid.type": CONST.GRID_TYPES.HEXODDR});
 });
 ```
+### BONUS: Apply Lock-on (player). WARPGATE MODULE REQUIRED
+Let your players drag this onto their macro hotbar. This lets them apply Lock-on to NPCs. Thanks to Freeze on Foundry Discord's #macro-polo.
+```
+const target = game.user.targets.first().document;
+const id = "lockon";
+const eff = CONFIG.statusEffects.find(e => e.id === id);
+if(!eff) return ui.notifications.warn("effect id doesnt exist");
+const data = {
+    embedded: {
+        ActiveEffect: {
+            [game.i18n.format(eff.label)]: {
+                ...eff, 
+                flags:{
+                    core: {
+                        statusId: id
+                    }
+                }
+            }
+        }
+    }
+}
+await warpgate.mutate(target, data, {}, {permanent: true});
+```
 # manifest:
 https://github.com/Cakeisgreater/LANCER-Toggle-Condition-LTC-/releases/download/Latest/module.json
 
